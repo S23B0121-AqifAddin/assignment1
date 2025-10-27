@@ -8,11 +8,11 @@ visualise = st.Page('home1.py', title='Pencapaian Akademik Pelajar', icon=":mate
 
 home = st.Page('home.py', title='Homepage', default=True, icon=":material/home:")
 
-Page 1 = st.Page('page1.py', title='Page 1', default=True, icon=":material/home:")
+Page1 = st.Page('page1.py', title='Page 1', default=True, icon=":material/home:")
 
-Page 2 = st.Page('page2.py', title='Page 2', default=True, icon=":material/home:")
+Page2 = st.Page('page2.py', title='Page 2', default=True, icon=":material/home:")
 
-Page 3 = st.Page('page3.py', title='Page 3', default=True, icon=":material/home:")
+Page3 = st.Page('page3.py', title='Page 3', default=True, icon=":material/home:")
 
 pg = st.navigation(
         {
