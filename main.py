@@ -16,7 +16,7 @@ page_3 = st.Page('page3.py', title='Page 3', default=True, icon=":material/home:
 
 pg = st.navigation(
         {
-            "Menu": [home, visualise]
+            "Menu": [home, visualise, page_1, page_2, page_3]
         }
     )
 
