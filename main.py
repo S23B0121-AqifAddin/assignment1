@@ -1,10 +1,10 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Student Survey"
+    page_title="Bangladesh Severity Accidents"
 )
 
-visualise = st.Page('home1.py', title='Pencapaian Akademik Pelajar', icon=":material/school:")
+visualise = st.Page('home1.py', title='Bangladesh Severity Accidents', icon=":material/school:")
 home = st.Page('home.py', title='Homepage', default=True, icon=":material/home:")
 page_1 = st.Page('page1.py', title='Page 1', default=True, icon=":material/home:")
 page_2 = st.Page('page2.py', title='Page 2', default=True, icon=":material/home:")
