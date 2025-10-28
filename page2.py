@@ -8,7 +8,7 @@ import plotly.express as px
 try:
     # Attempt to load the real data
     # NOTE: Update 'your_data.csv' to the actual filename if needed
-    df = pd.read_csv("your_data.csv")
+    df = pd.read_csv("motorbike_accident_severity.csv")
 except FileNotFoundError:
     # Create a dummy DataFrame if the file isn't found
     st.warning("Data file not found. Using dummy data for demonstration.")
