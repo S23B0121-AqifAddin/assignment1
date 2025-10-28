@@ -15,5 +15,4 @@ pg = st.navigation(
             "Menu": [home, visualise, page_1, page_2, page_3]
         }
     )
-})
 pg.run()
