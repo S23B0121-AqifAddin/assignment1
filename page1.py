@@ -13,6 +13,12 @@ st.set_page_config(
 st.title("Motorbike Accident Analysis")
 st.subheader("Distribution of Biker Occupation")
 
+# --- UPDATED: Summary Box using st.info ---
+summary_text = "This chart shows the distribution of road types where accidents occurred. 'Village Road' is the most frequent road type in the dataset, followed by 'Urban Road' and 'Rural Road'. 'Highway' is the least common road type for accidents in this dataset."
+st.info(summary_text)
+
+# --- End of Summary Box --
+
 # 1. Load the dataset
 try:
     # Attempt to load the real data
