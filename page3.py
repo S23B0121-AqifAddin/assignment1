@@ -30,8 +30,9 @@ if 'Road_Type' in df.columns:
         x='Road Type',
         y='Count',
         title='Distribution of Road Type',
-        color='plasma',  # Color by road type category
-        color_discrete_sequence=px.colors.sequential.Cividis # Use a sequential color scheme similar to 'cividis'
+        color='Road Type',  # Color by road type category (Corrected from 'plasma')
+        # UPDATED: Using a brighter, distinct qualitative palette (Vivid)
+        color_discrete_sequence=px.colors.qualitative.Vivid 
     )
 
     # 3. Customize the layout
