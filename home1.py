@@ -13,7 +13,7 @@ st.set_page_config(
 )
 
 # Page header
-st.header("Tutorial Scientific Visualization", divider="grey")
+st.header("Bangladesh Motorbike Accident Severity", divider="grey")
 
 col1, col2, col3, col4 = st.columns(4)
     
@@ -24,9 +24,9 @@ col4.metric(label="PLO 5", value=f"4.3", help="PLO 5: Communication Skill", bord
 
 # Load your data
 try:
-    df2 = pd.read_csv('https://raw.githubusercontent.com/S23B0121-AqifAddin/tuto-SV/refs/heads/main/student_survey_exported%20(1).csv', encoding='utf-8')
+    df2 = pd.read_csv('https://raw.githubusercontent.com/S23B0121-AqifAddin/assignment1/refs/heads/main/bangladesh_motorbikeaccidents.csv', encoding='utf-8')
 except UnicodeDecodeError:
-    df2 = pd.read_csv('https://raw.githubusercontent.com/S23B0121-AqifAddin/tuto-SV/refs/heads/main/student_survey_exported%20(1).csv', encoding='latin-1')
+    df2 = pd.read_csv('https://raw.githubusercontent.com/S23B0121-AqifAddin/assignment1/refs/heads/main/bangladesh_motorbikeaccidents.csv', encoding='latin-1')
 
 st.dataframe(df2.head()) # Use st.dataframe instead of just df2 to display the data
 
