@@ -46,3 +46,5 @@ if 'Road_Type' in df.columns:
 
 else:
     st.error("The DataFrame does not contain a 'Road_Type' column.")
+
+st.write("This chart shows the distribution of road types where accidents occurred. 'Village Road' is the most frequent road type in the dataset, followed by 'Urban Road' and 'Rural Road'. 'Highway' is the least common road type for accidents in this dataset.")
