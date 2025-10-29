@@ -20,10 +20,10 @@ except FileNotFoundError:
 # --- Streamlit Application ---
 
 st.title("🚗 Accident Weather Condition Analysis")
-st.subheader("Distribution of Weather Conditions during Accidents (Plotly)")
+st.subheader("Distribution of Weather Conditions during Accidents")
 
 # --- UPDATED: Summary Box using st.info ---
-summary_text = "This chart shows the distribution of road types where accidents occurred. 'Village Road' is the most frequent road type in the dataset, followed by 'Urban Road' and 'Rural Road'. 'Highway' is the least common road type for accidents in this dataset."
+summary_text = "This chart illustrates the frequency of different weather conditions at the time of the reported motorbike accidents. 'Clear' weather conditions appear to be the most common during accidents, followed by 'Rainy' and 'Foggy' conditions. 'Windy' conditions are the least frequent."
 st.info(summary_text)
 
 # --- End of Summary Box --
@@ -57,4 +57,3 @@ if 'Weather' in df.columns:
 else:
     st.error("The DataFrame does not contain a 'Weather' column.")
 
-st.write("This chart illustrates the frequency of different weather conditions at the time of the reported motorbike accidents. 'Clear' weather conditions appear to be the most common during accidents, followed by 'Rainy' and 'Foggy' conditions. 'Windy' conditions are the least frequent.")
