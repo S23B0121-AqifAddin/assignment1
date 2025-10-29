@@ -50,3 +50,5 @@ if 'Weather' in df.columns:
 
 else:
     st.error("The DataFrame does not contain a 'Weather' column.")
+
+st.write("This chart illustrates the frequency of different weather conditions at the time of the reported motorbike accidents. 'Clear' weather conditions appear to be the most common during accidents, followed by 'Rainy' and 'Foggy' conditions. 'Windy' conditions are the least frequent.")
