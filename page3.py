@@ -19,6 +19,12 @@ except FileNotFoundError:
 st.title("🛣️ Road Type Analysis")
 st.subheader("To identify the specific road environments that contribute most significantly to motorbike accidents, thereby enabling targeted safety interventions and resource allocation.")
 
+# --- UPDATED: Summary Box using st.info ---
+summary_text = "This chart shows the distribution of road types where accidents occurred. 'Village Road' is the most frequent road type in the dataset, followed by 'Urban Road' and 'Rural Road'. 'Highway' is the least common road type for accidents in this dataset."
+st.info(summary_text)
+
+# --- End of Summary Box ---
+
 if 'Road_Type' in df.columns:
     # 1. Prepare data for Plotly (get counts and ensure order)
     road_type_counts = df['Road_Type'].value_counts().reset_index()
@@ -48,4 +54,4 @@ if 'Road_Type' in df.columns:
 else:
     st.error("The DataFrame does not contain a 'Road_Type' column.")
 
-st.write("This chart shows the distribution of road types where accidents occurred. 'Village Road' is the most frequent road type in the dataset, followed by 'Urban Road' and 'Rural Road'. 'Highway' is the least common road type for accidents in this dataset.")
+# Original st.write has been removed as its content is now in st.info()
