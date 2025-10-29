@@ -19,7 +19,7 @@ except FileNotFoundError:
 
 # --- Streamlit Application ---
 
-st.title("🚗 Accident Weather Condition Analysis")
+st.title("Accident Weather Condition Analysis")
 st.subheader("Distribution of Weather Conditions during Accidents")
 
 # --- UPDATED: Summary Box using st.info ---
