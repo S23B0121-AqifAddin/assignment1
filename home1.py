@@ -28,5 +28,3 @@ try:
 except UnicodeDecodeError:
     df2 = pd.read_csv('https://raw.githubusercontent.com/S23B0121-AqifAddin/assignment1/refs/heads/main/bangladesh_motorbikeaccidents.csv', encoding='latin-1')
 
-st.dataframe(df2.head()) # Use st.dataframe instead of just df2 to display the data
-
