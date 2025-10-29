@@ -1,31 +1,30 @@
 import streamlit as st
+import pandas as pd
+import plotly.express as px
 
-# Add a banner image at the top
-banner_image = 'https://raw.githubusercontent.com/fakhitah3/FHPK-TVET/main/3u1i.jpeg' 
-st.image(banner_image, use_container_width=True)
 
-# Add the main introduction paragraph
-st.write(
-    """
-    **Scientific Visualization** is a multidisciplinary field that focuses on transforming complex scientific data into visual forms that are easier to understand, interpret, and communicate. 
-    Through the use of computational techniques, visualization helps researchers explore datasets, identify hidden patterns, and gain insights that would otherwise remain obscure in numerical form.
-    """
+# --- Corrected Imports ---
+import plotly.graph_objects as go # Keep this if you need go, though px handles everything here
+
+# Set Streamlit page configuration (must be the first Streamlit command)
+st.set_page_config(
+    page_title="Bangladesh Motorbike Accident Severity",
+    layout="wide" # Set layout here for consistency
 )
 
-banner_image = 'https://raw.githubusercontent.com/fakhitah3/FHPK-TVET/main/3u1i_2.jpeg' 
-st.image(banner_image, use_container_width=True)
+# Page header
+st.header("Bangladesh Motorbike Accident Severity", divider="grey")
 
-# Add the extended explanation
-st.write(
-    """
-    The aim of scientific visualization is not merely to present data attractively, but to **enhance comprehension and decision-making** through visual analytics. 
-    Applications span across disciplines such as **climate science**, **medicine**, **engineering**, **data science**, and **environmental studies**.
-
-    In this course or module, students will learn to:
-    - Select relevant datasets for analysis and visualization.
-    - Apply various visualization techniques such as graphs, maps, and 3D models.
-    - Interpret visual outputs to support scientific conclusions and policy recommendations.
+col1, col2, col3, col4 = st.columns(4)
     
-    By the end of this exercise, students should be able to produce **informative, accurate, and interactive visualizations** that effectively communicate scientific findings to both expert and non-expert audiences.
-    """
-)
+col1.metric(label="PLO 2", value=f"3.3", help="PLO 2: Cognitive Skill", border=True)
+col2.metric(label="PLO 3", value=f"3.5", help="PLO 3: Digital Skill", border=True)
+col3.metric(label="PLO 4", value=f"4.0", help="PLO 4: Interpersonal Skill", border=True)
+col4.metric(label="PLO 5", value=f"4.3", help="PLO 5: Communication Skill", border=True)
+
+# Load your data
+try:
+    df2 = pd.read_csv('https://raw.githubusercontent.com/S23B0121-AqifAddin/assignment1/refs/heads/main/bangladesh_motorbikeaccidents.csv', encoding='utf-8')
+except UnicodeDecodeError:
+    df2 = pd.read_csv('https://raw.githubusercontent.com/S23B0121-AqifAddin/assignment1/refs/heads/main/bangladesh_motorbikeaccidents.csv', encoding='latin-1')
+df2
