@@ -8,7 +8,7 @@ import plotly.graph_objects as go # Keep this if you need go, though px handles 
 
 # Set Streamlit page configuration (must be the first Streamlit command)
 st.set_page_config(
-    page_title="Tutorial Scientific Visualization",
+    page_title="Bangladesh Motorbike Accident Severity",
     layout="wide" # Set layout here for consistency
 )
 
