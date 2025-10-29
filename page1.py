@@ -14,7 +14,7 @@ st.title("Motorbike Accident Analysis")
 st.subheader("Distribution of Biker Occupation")
 
 # --- UPDATED: Summary Box using st.info ---
-summary_text = "This chart shows the distribution of road types where accidents occurred. 'Village Road' is the most frequent road type in the dataset, followed by 'Urban Road' and 'Rural Road'. 'Highway' is the least common road type for accidents in this dataset."
+summary_text = "The above chart shows the distribution of biker occupations in the dataset. We can observe that 'Students' are the most frequent occupation among bikers in this dataset, followed by 'Government Employee', 'Self Employed', and 'Private Employee'. 'Others' and 'Unemployed' are less represented."
 st.info(summary_text)
 
 # --- End of Summary Box --
@@ -66,6 +66,3 @@ if 'Biker_Occupation' in df.columns:
 else:
     st.error("The DataFrame does not contain a 'Biker_Occupation' column for analysis.")
 
-# You can add more analysis here if needed
-st.markdown("---")
-st.write("The above chart shows the distribution of biker occupations in the dataset. We can observe that 'Students' are the most frequent occupation among bikers in this dataset, followed by 'Government Employee', 'Self Employed', and 'Private Employee'. 'Others' and 'Unemployed' are less represented.")
