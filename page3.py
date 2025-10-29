@@ -17,7 +17,7 @@ except FileNotFoundError:
 # --- Streamlit Application ---
 
 st.title("🛣️ Road Type Analysis")
-st.subheader("Distribution of Road Types During Accidents")
+st.subheader("To identify the specific road environments that contribute most significantly to motorbike accidents, thereby enabling targeted safety interventions and resource allocation.")
 
 if 'Road_Type' in df.columns:
     # 1. Prepare data for Plotly (get counts and ensure order)
