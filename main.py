@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Student Survey", page_icon=":material/school:")
+st.set_page_config(page_title="Bangladesh Motorbike Accident", page_icon=":material/school:")
 
 # Define each page
 home = st.Page("home.py", title="Homepage", icon=":material/home:", default=True)
