@@ -22,6 +22,12 @@ except FileNotFoundError:
 st.title("🚗 Accident Weather Condition Analysis")
 st.subheader("Distribution of Weather Conditions during Accidents (Plotly)")
 
+# --- UPDATED: Summary Box using st.info ---
+summary_text = "This chart shows the distribution of road types where accidents occurred. 'Village Road' is the most frequent road type in the dataset, followed by 'Urban Road' and 'Rural Road'. 'Highway' is the least common road type for accidents in this dataset."
+st.info(summary_text)
+
+# --- End of Summary Box --
+
 if 'Weather' in df.columns:
     # 1. Prepare data for Plotly (get counts and reset index)
     weather_counts = df['Weather'].value_counts().reset_index()
