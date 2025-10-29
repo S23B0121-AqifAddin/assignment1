@@ -62,4 +62,4 @@ else:
 
 # You can add more analysis here if needed
 st.markdown("---")
-st.write("Further analysis can be added below.")
+st.write("The above chart shows the distribution of biker occupations in the dataset. We can observe that 'Students' are the most frequent occupation among bikers in this dataset, followed by 'Government Employee', 'Self Employed', and 'Private Employee'. 'Others' and 'Unemployed' are less represented.")
