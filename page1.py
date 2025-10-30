@@ -107,15 +107,14 @@ st.info(summary_text)
 # --- CHART 3: Biker Age Distribution (Plotly Histogram) ---
 if 'Biker_Age' in df.columns:
 
-
-    fig_age = px.histogram(
+   fig_age = px.histogram(
         df,
         x='Biker_Age',
         nbins=20,  # Set number of bins
         title='Distribution of Biker Age',
         labels={'Biker_Age': 'Biker Age', 'count': 'Frequency'},
         marginal='box', # Add a box plot on top for summary statistics
-        color_discrete_sequence=px.colors.qualitative.D4 # Use a different palette for distinction
+        color_discrete_sequence=['#E63946'], # Changed color to vibrant red
         opacity=0.8
     )
 
@@ -128,4 +127,3 @@ if 'Biker_Age' in df.columns:
     st.plotly_chart(fig_age, use_container_width=True)
 else:
     st.error("The DataFrame does not contain a 'Biker_Age' column for analysis.")
-
