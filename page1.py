@@ -115,7 +115,7 @@ if 'Biker_Age' in df.columns:
         title='Distribution of Biker Age',
         labels={'Biker_Age': 'Biker Age', 'count': 'Frequency'},
         marginal='box', # Add a box plot on top for summary statistics
-        color_discrete_sequence=['#440154'], # A deep color
+        color_discrete_sequence=px.colors.qualitative.Plotly # Use a different palette for distinction
         opacity=0.8
     )
 
