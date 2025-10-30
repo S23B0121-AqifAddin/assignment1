@@ -2,8 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px # Import Plotly Express
-import matplotlib.pyplot as plt # Needed for st.pyplot()
-import seaborn as sns # Needed for sns.countplot()
 
 # --- Streamlit Application ---
 
@@ -47,7 +45,7 @@ if 'Biker_Occupation' in df.columns:
     occupation_counts = df['Biker_Occupation'].value_counts().reset_index()
     occupation_counts.columns = ['Biker_Occupation', 'Count'] # Rename columns for clarity
 
-    fig = px.bar(
+    fig_occ = px.bar(
         occupation_counts,
         x='Biker_Occupation',
         y='Count',
@@ -58,7 +56,7 @@ if 'Biker_Occupation' in df.columns:
     )
 
     # 3. Customize the plot (Plotly customizations)
-    fig.update_layout(
+    fig_occ.update_layout(
         xaxis_title_text='Biker Occupation', # X-axis title
         yaxis_title_text='Count',            # Y-axis title
         xaxis_tickangle=-45,                 # Rotate x-axis labels
@@ -66,36 +64,38 @@ if 'Biker_Occupation' in df.columns:
     )
 
     # 4. Display the chart in Streamlit
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig_occ, use_container_width=True)
 else:
     st.error("The DataFrame does not contain a 'Biker_Occupation' column for analysis.")
 
-# --- SECOND CHART: Biker Education Level Distribution (Matplotlib/Seaborn) ---
+# --- SECOND CHART: Biker Education Level Distribution (Plotly) ---
 if 'Biker_Education_Level' in df.columns:
-    st.header('Biker Education Level Distribution (Seaborn)')
+    st.header('Biker Education Level Distribution (Plotly)')
 
-    # Create the figure object as required by st.pyplot()
-    fig, ax = plt.subplots(figsize=(10, 6))
+    # 1. Calculate counts
+    education_counts = df['Biker_Education_Level'].value_counts().reset_index()
+    education_counts.columns = ['Biker_Education_Level', 'Count']
 
-    # Recreate the seaborn countplot logic on the axes object
-    sns.countplot(
-        data=df,
+    # 2. Create the Plotly figure
+    fig_edu = px.bar(
+        education_counts,
         x='Biker_Education_Level',
-        order=df['Biker_Education_Level'].value_counts().index,
-        palette='magma',
-        ax=ax # Pass the axes object to seaborn
+        y='Count',
+        title='Distribution of Biker Education Level',
+        labels={'Biker_Education_Level': 'Education Level', 'Count': 'Number of Bikers'},
+        color='Biker_Education_Level', # Color bars by education category
+        color_discrete_sequence=px.colors.qualitative.Plotly # Use a different palette for distinction
     )
 
-    # Set the title and labels using the axes object
-    ax.set_title('Distribution of Biker Education Level')
-    ax.set_xlabel('Biker Education Level')
-    ax.set_ylabel('Count')
+    # 3. Customize the plot
+    fig_edu.update_layout(
+        xaxis_title_text='Biker Education Level',
+        yaxis_title_text='Count',
+        xaxis_tickangle=-45,
+        hovermode="x unified"
+    )
 
-    # Rotate x-tick labels and adjust layout
-    plt.xticks(rotation=45, ha='right')
-    plt.tight_layout()
-
-    # Display the plot in Streamlit
-    st.pyplot(fig)
+    # 4. Display the chart in Streamlit
+    st.plotly_chart(fig_edu, use_container_width=True)
 else:
     st.error("The DataFrame does not contain a 'Biker_Education_Level' column for analysis.")
