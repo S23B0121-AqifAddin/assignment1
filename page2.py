@@ -23,10 +23,10 @@ st.title("Accident Weather Condition Analysis")
 st.subheader("To determine if accident frequency remains high during 'Clear' weather relative to adverse conditions (Rainy, Foggy), suggesting that factors beyond weather, such as speed or complacency, are primary contributors to the majority of crashes.")
 
 # --- UPDATED: Summary Box using st.info ---
+st.header("1. Weather of Day Analysis")
 summary_text = "This chart illustrates the frequency of different weather conditions at the time of the reported motorbike accidents. 'Clear' weather conditions appear to be the most common during accidents, followed by 'Rainy' and 'Foggy' conditions. 'Windy' conditions are the least frequent."
 st.info(summary_text)
 
-st.header("1. Weather of Day Analysis")
 # --- End of Summary Box --
 
 if 'Weather' in df.columns:
