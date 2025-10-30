@@ -26,6 +26,7 @@ st.subheader("To determine if accident frequency remains high during 'Clear' wea
 summary_text = "This chart illustrates the frequency of different weather conditions at the time of the reported motorbike accidents. 'Clear' weather conditions appear to be the most common during accidents, followed by 'Rainy' and 'Foggy' conditions. 'Windy' conditions are the least frequent."
 st.info(summary_text)
 
+st.header("1. Weather of Day Analysis")
 # --- End of Summary Box --
 
 if 'Weather' in df.columns:
@@ -58,7 +59,7 @@ else:
     st.error("The DataFrame does not contain a 'Weather' column.")
 
 # --- 3. Time of Day Analysis (New Section) ---
-st.header("3. Time of Day Analysis")
+st.header("2. Time of Day Analysis")
 st.subheader("To pinpoint peak accident times to optimize enforcement schedules and issue time-specific safety alerts.")
 
 # Summary Box
