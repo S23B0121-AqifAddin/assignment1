@@ -66,3 +66,29 @@ if 'Biker_Occupation' in df.columns:
 else:
     st.error("The DataFrame does not contain a 'Biker_Occupation' column for analysis.")
 
+st.title('Biker Education Level Distribution App')
+st.header('Visualize the distribution of Biker_Education_Level')
+
+# Create the figure object as required by st.pyplot()
+fig, ax = plt.subplots(figsize=(10, 6))
+
+# Recreate the seaborn countplot logic on the axes object
+sns.countplot(
+    data=df,
+    x='Biker_Education_Level',
+    order=df['Biker_Education_Level'].value_counts().index,
+    palette='magma',
+    ax=ax # Pass the axes object to seaborn
+)
+
+# Set the title and labels using the axes object
+ax.set_title('Distribution of Biker Education Level')
+ax.set_xlabel('Biker Education Level')
+ax.set_ylabel('Count')
+
+# Rotate x-tick labels and adjust layout
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+
+# Display the plot in Streamlit
+st.pyplot(fig)
