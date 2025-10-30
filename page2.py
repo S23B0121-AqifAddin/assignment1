@@ -89,39 +89,3 @@ if 'Time_of_Day' in df.columns:
 else:
     st.error("The DataFrame does not contain a 'Time_of_Day' column. Please check your data file.")
 
-# --- 3. Relationship between Weather and Accident Severity (Plotly Stacked Bar) ---
-st.header("3. Relationship between Weather and Accident Severity (Stacked)")
-summary_text_severity = "This stacked chart displays accident counts grouped by weather and segmented by severity. This helps determine if certain weather types lead to a disproportionately higher number of fatal or serious crashes."
-st.info(summary_text_severity)
-
-if 'Weather' in df.columns and 'Accident_Severity' in df.columns:
-
-    st.subheader("Stacked Bar Chart of Accident Severity by Weather Condition")
-
-    # Use Plotly Express to create the stacked bar chart directly
-    fig_severity = px.histogram(
-        df,
-        x='Weather',
-        color='Accident_Severity',
-        barmode='stack', # This creates the stacked effect
-        title='Accident Severity by Weather Condition (Stacked)',
-        labels={'Weather': 'Weather Condition', 'count': 'Number of Accidents'},
-        color_discrete_sequence=px.colors.qualitative.Prism # Choosing a color-blind safe palette
-    )
-
-    # Customize layout and axis labels
-    fig_severity.update_layout(
-        xaxis_title='Weather Condition',
-        yaxis_title='Number of Accidents (Count)',
-        xaxis_tickangle=-45,
-        legend_title="Severity"
-    )
-    
-    # Ensure all bars are clearly visible
-    fig_severity.update_xaxes(categoryorder='total descending')
-
-    # Display the Plotly chart in Streamlit
-    st.plotly_chart(fig_severity, use_container_width=True)
-    
-else:
-    st.error("DataFrame must contain 'Weather' and 'Accident_Severity' columns.")
