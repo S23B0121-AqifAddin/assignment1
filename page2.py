@@ -101,30 +101,29 @@ st.info(summary_text)
 
 # Check if the required columns exist before proceeding
 if 'Weather' in df.columns and 'Accident_Severity' in df.columns:
-    
-    # 1. Aggregate the data for a stacked bar chart
-    # Create a contingency table (cross-tabulation)
-    # This counts the number of each Severity for each Weather type
-    cross_tab = pd.crosstab(df['Weather'], df['Accident_Severity'])
+    # 1. Aggregate the data for a stacked bar chart
+    # Create a contingency table (cross-tabulation)
+    # This counts the number of each Severity for each Weather type
+    cross_tab = pd.crosstab(df['Weather'], df['Accident_Severity'])
 
-    st.subheader("Stacked Bar Chart of Accident Severity by Weather Condition")
-    
-    # 2. Create the stacked bar plot using pandas/matplotlib
-    fig, ax = plt.subplots(figsize=(10, 6))
+    st.subheader("Stacked Bar Chart of Accident Severity by Weather Condition")
+    
+    # 2. Create the stacked bar plot using pandas/matplotlib
+    fig, ax = plt.subplots(figsize=(10, 6))
 
-    # Plot the cross-tabulation as a stacked bar chart
-    # 'colormap' can be used instead of 'palette' from seaborn
-    cross_tab.plot(kind='bar', stacked=True, ax=ax, colormap='viridis') 
+    # Plot the cross-tabulation as a stacked bar chart
+    # 'colormap' can be used instead of 'palette' from seaborn
+    cross_tab.plot(kind='bar', stacked=True, ax=ax, colormap='viridis') 
 
-    # 3. Apply customizations
-    ax.set_title('Accident Severity by Weather Condition')
-    ax.set_xlabel('Weather Condition')
-    ax.set_ylabel('Number of Accidents (Count)')
-    plt.xticks(rotation=45, ha='right')
-    plt.tight_layout()
+    # 3. Apply customizations
+    ax.set_title('Accident Severity by Weather Condition')
+    ax.set_xlabel('Weather Condition')
+    ax.set_ylabel('Number of Accidents (Count)')
+    plt.xticks(rotation=45, ha='right')
+    plt.tight_layout()
 
-    # 4. Display the plot in Streamlit
-    st.pyplot(fig)
-    
+    # 4. Display the plot in Streamlit
+    st.pyplot(fig)
+    
 else:
-    st.error("DataFrame must contain 'Weather' and 'Accident_Severity' columns.")
+    st.error("DataFrame must contain 'Weather' and 'Accident_Severity' columns.")
