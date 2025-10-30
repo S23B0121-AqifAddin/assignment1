@@ -57,3 +57,39 @@ if 'Weather' in df.columns:
 else:
     st.error("The DataFrame does not contain a 'Weather' column.")
 
+# --- 3. Time of Day Analysis (New Section) ---
+st.header("3. Time of Day Analysis")
+st.subheader("To pinpoint peak accident times to optimize enforcement schedules and issue time-specific safety alerts.")
+
+# Summary Box
+summary_text_time = "This chart illustrates the frequency of accidents categorized by the time of day. This is crucial for optimizing police patrols and enforcement efforts to target the most dangerous periods for bikers."
+st.info(summary_text_time)
+
+if 'Time_of_Day' in df.columns:
+    # 1. Prepare data for Plotly (get counts and ensure order)
+    time_counts = df['Time_of_Day'].value_counts().reset_index()
+    time_counts.columns = ['Time of Day', 'Count'] # Rename columns for clarity
+
+    # 2. Create the Plotly Bar Chart
+    fig_time = px.bar(
+        time_counts,
+        x='Time of Day',
+        y='Count',
+        title='Distribution of Accidents by Time of Day',
+        color='Time of Day',  # Color by time category
+        # Using a distinct qualitative palette (Prism)
+        color_discrete_sequence=px.colors.qualitative.Prism
+    )
+
+    # 3. Customize the layout
+    fig_time.update_layout(
+        xaxis_title='Time of Day',
+        yaxis_title='Count of Accidents',
+        xaxis_tickangle=-45 # Rotate labels for better fit
+    )
+
+    # 4. Display the chart in Streamlit
+    st.plotly_chart(fig_time, use_container_width=True)
+
+else:
+    st.error("The DataFrame does not contain a 'Time_of_Day' column. Please check your data file.")
