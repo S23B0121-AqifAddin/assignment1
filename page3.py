@@ -78,7 +78,7 @@ if 'Road_condition' in df.columns:
         y='Count',
         title='Distribution of Accidents by Road Condition',
         color='Road Condition',  # Color by road condition category
-        color_discrete_sequence=px.colors.qualitative.Deep # Using the Deep palette
+        color_discrete_sequence=px.colors.qualitative.Vivid # Using the Deep palette
     )
 
     # 3. Customize the layout
