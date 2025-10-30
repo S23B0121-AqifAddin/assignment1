@@ -99,3 +99,33 @@ if 'Biker_Education_Level' in df.columns:
     st.plotly_chart(fig_edu, use_container_width=True)
 else:
     st.error("The DataFrame does not contain a 'Biker_Education_Level' column for analysis.")
+    
+st.header('Distribution of Biker Age')
+summary_text = ""
+st.info(summary_text)
+
+# --- CHART 3: Biker Age Distribution (Plotly Histogram) ---
+if 'Biker_Age' in df.columns:
+
+
+    fig_age = px.histogram(
+        df,
+        x='Biker_Age',
+        nbins=20,  # Set number of bins
+        title='Distribution of Biker Age',
+        labels={'Biker_Age': 'Biker Age', 'count': 'Frequency'},
+        marginal='box', # Add a box plot on top for summary statistics
+        color_discrete_sequence=['#440154'], # A deep color
+        opacity=0.8
+    )
+
+    fig_age.update_layout(
+        xaxis_title_text='Biker Age',
+        yaxis_title_text='Frequency',
+        hovermode="x unified"
+    )
+    
+    st.plotly_chart(fig_age, use_container_width=True)
+else:
+    st.error("The DataFrame does not contain a 'Biker_Age' column for analysis.")
+
