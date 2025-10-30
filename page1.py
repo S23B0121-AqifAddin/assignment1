@@ -69,8 +69,6 @@ else:
 if 'Biker_Education_Level' in df.columns:
     st.header('Biker Education Level Distribution')
 
-summary_text = "The above chart shows the distribution of biker occupations in the dataset. We can observe that 'Students' are often a frequent occupation among bikers in this dataset, followed by other categories like 'Government Employee', 'Self Employed', and 'Private Employee'. 'Others' and 'Unemployed' are typically less represented."
-st.info(summary_text)
     # 1. Calculate counts
     education_counts = df['Biker_Education_Level'].value_counts().reset_index()
     education_counts.columns = ['Biker_Education_Level', 'Count']
