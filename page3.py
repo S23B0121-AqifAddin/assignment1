@@ -54,4 +54,35 @@ if 'Road_Type' in df.columns:
 else:
     st.error("The DataFrame does not contain a 'Road_Type' column.")
 
+if 'Road_condition' in df.columns:
+    # 1. Prepare data for Plotly (get counts and ensure order)
+    # The 'order=...' logic from your seaborn code is implemented here via value_counts()
+    condition_counts = df['Road_condition'].value_counts().reset_index()
+    condition_counts.columns = ['Road Condition', 'Count'] # Rename columns for clarity
+
+    # 2. Create the Plotly Bar Chart
+    fig = px.bar(
+        condition_counts,
+        x='Road Condition',
+        y='Count',
+        title='Distribution of Accidents by Road Condition',
+        color='Road Condition',  # Color by road condition category
+        # Using a distinct qualitative palette (Deep)
+        color_discrete_sequence=px.colors.qualitative.Deep 
+    )
+
+    # 3. Customize the layout
+    fig.update_layout(
+        xaxis_title='Road Condition',
+        yaxis_title='Count of Accidents',
+        xaxis_tickangle=-45 # Rotate labels for better fit
+    )
+
+    # 4. Display the chart in Streamlit
+    st.plotly_chart(fig, use_container_width=True)
+
+else:
+    st.error("The DataFrame does not contain a 'Road_condition' column. Please check your data file.")
+
+
 # Original st.write has been removed as its content is now in st.info()
