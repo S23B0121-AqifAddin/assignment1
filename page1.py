@@ -107,7 +107,38 @@ st.info(summary_text)
 # --- CHART 3: Biker Age Distribution (Plotly Histogram) ---
 if 'Biker_Age' in df.columns:
 
-   fig_age = px.histogram(
+    education_counts = df['Biker_Education_Level'].value_counts().reset_index()
+    education_counts.columns = ['Biker_Education_Level', 'Count']
+
+    fig_edu = px.bar(
+        education_counts,
+        x='Biker_Education_Level',
+        y='Count',
+        title='Distribution of Biker Education Level',
+        labels={'Biker_Education_Level': 'Education Level', 'Count': 'Number of Bikers'},
+        color='Biker_Education_Level',
+        color_discrete_sequence=px.colors.qualitative.Plotly
+    )
+
+    fig_edu.update_layout(
+        xaxis_title_text='Biker Education Level',
+        yaxis_title_text='Count',
+        xaxis_tickangle=-45,
+        hovermode="x unified"
+    )
+
+    st.plotly_chart(fig_edu, use_container_width=True)
+else:
+    st.error("The DataFrame does not contain a 'Biker_Education_Level' column for analysis.")
+
+st.header('Distribution of Biker Age')
+summary_text = ""
+st.info(summary_text)
+
+# --- CHART 3: Biker Age Distribution (Plotly Histogram) ---
+if 'Biker_Age' in df.columns:
+
+    fig_age = px.histogram(
         df,
         x='Biker_Age',
         nbins=20,  # Set number of bins
