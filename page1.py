@@ -13,10 +13,9 @@ st.set_page_config(
 st.title("Motorbike Accident Analysis")
 st.subheader("The primary objective of this visualization is to compare and quantify the representation of different occupations within the biker population to identify which occupation categories are the most and least common.")
 
-# --- UPDATED: Summary Box using st.info ---
-
-# --- End of Summary Box --
-
+st.header("Motorbike Accident Analysis")
+summary_text = "The above chart shows the distribution of biker occupations in the dataset. We can observe that 'Students' are often a frequent occupation among bikers in this dataset, followed by other categories like 'Government Employee', 'Self Employed', and 'Private Employee'. 'Others' and 'Unemployed' are typically less represented."
+st.info(summary_text)
 # 1. Load the dataset
 try:
     # Attempt to load the real data
@@ -38,8 +37,7 @@ except FileNotFoundError:
 # --- FIRST CHART: Biker Occupation Distribution (Plotly) ---
 if 'Biker_Occupation' in df.columns:
     st.header('Biker Occupation Distribution ')
-summary_text = "The above chart shows the distribution of biker occupations in the dataset. We can observe that 'Students' are often a frequent occupation among bikers in this dataset, followed by other categories like 'Government Employee', 'Self Employed', and 'Private Employee'. 'Others' and 'Unemployed' are typically less represented."
-st.info(summary_text)
+    
     # 2. Create the Plotly figure using Plotly Express
     occupation_counts = df['Biker_Occupation'].value_counts().reset_index()
     occupation_counts.columns = ['Biker_Occupation', 'Count'] # Rename columns for clarity
