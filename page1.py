@@ -11,11 +11,12 @@ st.set_page_config(
 )
 
 st.title("Motorbike Accident Analysis")
-st.subheader("The primary objective of this visualization is to compare and quantify the representation of different occupations within the biker population to identify which occupation categories are the most and least common.")
+st.subheader("Visualizing key demographics of the biker population involved in accidents.")
 
-st.header(' 1) Biker Occupation Distribution ')
-summary_text = "The above chart shows the distribution of biker occupations in the dataset. We can observe that 'Students' are often a frequent occupation among bikers in this dataset, followed by other categories like 'Government Employee', 'Self Employed', and 'Private Employee'. 'Others' and 'Unemployed' are typically less represented."
+# --- Summary Box for App ---
+summary_text = "The visualizations below explore the distribution of biker occupation, education level, and age. This helps quantify the representation of different demographic groups within the dataset."
 st.info(summary_text)
+
 # 1. Load the dataset
 try:
     # Attempt to load the real data
@@ -30,15 +31,18 @@ except FileNotFoundError:
         'Biker_Occupation': np.random.choice(['Student', 'Govt Employee', 'Self Employed', 'Private Employee', 'Others', 'Unemployed'], size=200),
         'Accident_Severity': np.random.choice(['Minor', 'Moderate', 'Major'], size=200),
         'Age_Band': np.random.choice(['<25', '25-45', '46-65', '>65'], size=200),
-        'Biker_Education_Level': np.random.choice(['High School', 'Diploma', 'Bachelor\'s', 'Master\'s', 'PhD', 'None'], size=200) # Added missing column
+        'Biker_Education_Level': np.random.choice(['High School', 'Diploma', 'Bachelor\'s', 'Master\'s', 'PhD', 'None'], size=200),
+        'Biker_Age': np.random.randint(16, 76, size=200) # Added numerical Biker_Age for histogram
     }
     df = pd.DataFrame(data)
 
-# --- FIRST CHART: Biker Occupation Distribution (Plotly) ---
+st.header('1) Biker Occupation Distribution')
+summary_text = "The above chart shows the distribution of biker occupations in the dataset. We can observe that 'Students' are often a frequent occupation among bikers in this dataset, followed by other categories like 'Government Employee', 'Self Employed', and 'Private Employee'. 'Others' and 'Unemployed' are typically less represented."
+st.info(summary_text)
+
+# --- CHART 1: Biker Occupation Distribution (Plotly Bar) ---
 if 'Biker_Occupation' in df.columns:
-   
     
-    # 2. Create the Plotly figure using Plotly Express
     occupation_counts = df['Biker_Occupation'].value_counts().reset_index()
     occupation_counts.columns = ['Biker_Occupation', 'Count'] # Rename columns for clarity
 
@@ -55,9 +59,9 @@ if 'Biker_Occupation' in df.columns:
     # 3. Customize the plot (Plotly customizations)
     fig_occ.update_layout(
         xaxis_title_text='Biker Occupation', # X-axis title
-        yaxis_title_text='Count',            # Y-axis title
-        xaxis_tickangle=-45,                 # Rotate x-axis labels
-        hovermode="x unified"                # Improve hover behavior
+        yaxis_title_text='Count',           # Y-axis title
+        xaxis_tickangle=-45,                # Rotate x-axis labels
+        hovermode="x unified"               # Improve hover behavior
     )
 
     # 4. Display the chart in Streamlit
@@ -65,11 +69,12 @@ if 'Biker_Occupation' in df.columns:
 else:
     st.error("The DataFrame does not contain a 'Biker_Occupation' column for analysis.")
 
+
 st.header('2) Biker Education Level Distribution')
-summary_text = ""
+summary_text = "This chart displays the frequency of different education levels among bikers."
 st.info(summary_text)
 
-# --- SECOND CHART: Biker Education Level Distribution (Plotly) ---
+# --- CHART 2: Biker Education Level Distribution (Plotly Bar) ---
 if 'Biker_Education_Level' in df.columns:
 
     # 1. Calculate counts
@@ -100,39 +105,8 @@ if 'Biker_Education_Level' in df.columns:
 else:
     st.error("The DataFrame does not contain a 'Biker_Education_Level' column for analysis.")
     
-st.header('Distribution of Biker Age')
-summary_text = ""
-st.info(summary_text)
-
-# --- CHART 3: Biker Age Distribution (Plotly Histogram) ---
-if 'Biker_Age' in df.columns:
-
-    education_counts = df['Biker_Education_Level'].value_counts().reset_index()
-    education_counts.columns = ['Biker_Education_Level', 'Count']
-
-    fig_edu = px.bar(
-        education_counts,
-        x='Biker_Education_Level',
-        y='Count',
-        title='Distribution of Biker Education Level',
-        labels={'Biker_Education_Level': 'Education Level', 'Count': 'Number of Bikers'},
-        color='Biker_Education_Level',
-        color_discrete_sequence=px.colors.qualitative.Plotly
-    )
-
-    fig_edu.update_layout(
-        xaxis_title_text='Biker Education Level',
-        yaxis_title_text='Count',
-        xaxis_tickangle=-45,
-        hovermode="x unified"
-    )
-
-    st.plotly_chart(fig_edu, use_container_width=True)
-else:
-    st.error("The DataFrame does not contain a 'Biker_Education_Level' column for analysis.")
-
-st.header('Distribution of Biker Age')
-summary_text = ""
+st.header('3) Distribution of Biker Age')
+summary_text = "This histogram shows the age distribution of the bikers, with a box plot summary on the margin to highlight the median, quartiles, and potential outliers."
 st.info(summary_text)
 
 # --- CHART 3: Biker Age Distribution (Plotly Histogram) ---
@@ -145,7 +119,7 @@ if 'Biker_Age' in df.columns:
         title='Distribution of Biker Age',
         labels={'Biker_Age': 'Biker Age', 'count': 'Frequency'},
         marginal='box', # Add a box plot on top for summary statistics
-        color_discrete_sequence=['#E63946'], # Changed color to vibrant red
+        color_discrete_sequence=['#E63946'], # Color changed to vibrant red for context
         opacity=0.8
     )
 
