@@ -65,9 +65,12 @@ if 'Biker_Occupation' in df.columns:
 else:
     st.error("The DataFrame does not contain a 'Biker_Occupation' column for analysis.")
 
+st.header('2) Biker Education Level Distribution')
+summary_text = ""
+st.info(summary_text)
+
 # --- SECOND CHART: Biker Education Level Distribution (Plotly) ---
 if 'Biker_Education_Level' in df.columns:
-    st.header('2) Biker Education Level Distribution')
 
     # 1. Calculate counts
     education_counts = df['Biker_Education_Level'].value_counts().reset_index()
