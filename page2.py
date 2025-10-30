@@ -106,7 +106,7 @@ if 'Weather' in df.columns and 'Accident_Severity' in df.columns:
         barmode='stack', # This creates the stacked effect
         title='Accident Severity by Weather Condition (Stacked)',
         labels={'Weather': 'Weather Condition', 'count': 'Number of Accidents'},
-        color_discrete_sequence=px.colors.qualitative.Safe # Choosing a color-blind safe palette
+        color_discrete_sequence=px.colors.qualitative.Prism # Choosing a color-blind safe palette
     )
 
     # Customize layout and axis labels
