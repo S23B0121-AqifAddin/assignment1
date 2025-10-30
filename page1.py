@@ -14,8 +14,6 @@ st.title("Motorbike Accident Analysis")
 st.subheader("The primary objective of this visualization is to compare and quantify the representation of different occupations within the biker population to identify which occupation categories are the most and least common.")
 
 # --- UPDATED: Summary Box using st.info ---
-summary_text = "The above chart shows the distribution of biker occupations in the dataset. We can observe that 'Students' are often a frequent occupation among bikers in this dataset, followed by other categories like 'Government Employee', 'Self Employed', and 'Private Employee'. 'Others' and 'Unemployed' are typically less represented."
-st.info(summary_text)
 
 # --- End of Summary Box --
 
@@ -39,8 +37,9 @@ except FileNotFoundError:
 
 # --- FIRST CHART: Biker Occupation Distribution (Plotly) ---
 if 'Biker_Occupation' in df.columns:
-    st.header('Biker Occupation Distribution (Plotly)')
-
+    st.header('Biker Occupation Distribution ')
+summary_text = "The above chart shows the distribution of biker occupations in the dataset. We can observe that 'Students' are often a frequent occupation among bikers in this dataset, followed by other categories like 'Government Employee', 'Self Employed', and 'Private Employee'. 'Others' and 'Unemployed' are typically less represented."
+st.info(summary_text)
     # 2. Create the Plotly figure using Plotly Express
     occupation_counts = df['Biker_Occupation'].value_counts().reset_index()
     occupation_counts.columns = ['Biker_Occupation', 'Count'] # Rename columns for clarity
@@ -70,8 +69,10 @@ else:
 
 # --- SECOND CHART: Biker Education Level Distribution (Plotly) ---
 if 'Biker_Education_Level' in df.columns:
-    st.header('Biker Education Level Distribution (Plotly)')
+    st.header('Biker Education Level Distribution')
 
+summary_text = "The above chart shows the distribution of biker occupations in the dataset. We can observe that 'Students' are often a frequent occupation among bikers in this dataset, followed by other categories like 'Government Employee', 'Self Employed', and 'Private Employee'. 'Others' and 'Unemployed' are typically less represented."
+st.info(summary_text)
     # 1. Calculate counts
     education_counts = df['Biker_Education_Level'].value_counts().reset_index()
     education_counts.columns = ['Biker_Education_Level', 'Count']
