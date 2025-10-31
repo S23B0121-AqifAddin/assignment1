@@ -32,7 +32,7 @@ except FileNotFoundError:
     df = pd.DataFrame(data)
 
 st.header('1) Biker Occupation Distribution')
-summary_text = "The highest frequency of bikers in the accident dataset are Students, followed by "Others, Business, and Service occupations, which have similar frequencies. This suggests that the student demographic may be disproportionately involved in motorbike accidents compared to other occupational groups"
+summary_text = "The highest frequency of bikers in the accident dataset are Students, followed by Others, Business, and Service occupations, which have similar frequencies. This suggests that the student demographic may be disproportionately involved in motorbike accidents compared to other occupational groups"
 st.info(summary_text)
 
 # --- CHART 1: Biker Occupation Distribution (Plotly Bar) ---
