@@ -12,11 +12,6 @@ st.set_page_config(
 
 st.title("Motorbike Accident Analysis")
 st.subheader("Visualizing key demographics of the biker population involved in accidents.")
-
-# --- Summary Box for App ---
-summary_text = "The visualizations below explore the distribution of biker occupation, education level, and age. This helps quantify the representation of different demographic groups within the dataset."
-st.info(summary_text)
-
 # 1. Load the dataset
 try:
     # Attempt to load the real data
@@ -37,7 +32,7 @@ except FileNotFoundError:
     df = pd.DataFrame(data)
 
 st.header('1) Biker Occupation Distribution')
-summary_text = "The above chart shows the distribution of biker occupations in the dataset. We can observe that 'Students' are often a frequent occupation among bikers in this dataset, followed by other categories like 'Government Employee', 'Self Employed', and 'Private Employee'. 'Others' and 'Unemployed' are typically less represented."
+summary_text = "The highest frequency of bikers in the accident dataset are Students, followed by "Others," "Business," and "Service" occupations, which have similar frequencies. This suggests that the student demographic may be disproportionately involved in motorbike accidents compared to other occupational groups"
 st.info(summary_text)
 
 # --- CHART 1: Biker Occupation Distribution (Plotly Bar) ---
@@ -71,7 +66,7 @@ else:
 
 
 st.header('2) Biker Education Level Distribution')
-summary_text = "This chart displays the frequency of different education levels among bikers."
+summary_text = "The clear majority of bikers involved in the accidents have an "Above high school" education level. The count for "High school" is significantly lower, and "Less than high school" is the lowest. This could indicate a higher propensity for accidents among the more educated group, or simply that the biking population is predominantly educated above the high school level."
 st.info(summary_text)
 
 # --- CHART 2: Biker Education Level Distribution (Plotly Bar) ---
@@ -106,7 +101,7 @@ else:
     st.error("The DataFrame does not contain a 'Biker_Education_Level' column for analysis.")
     
 st.header('3) Distribution of Biker Age')
-summary_text = "This histogram shows the age distribution of the bikers, with a box plot summary on the margin to highlight the median, quartiles, and potential outliers."
+summary_text = "The age distribution is right-skewed, meaning there is a tail extending towards older ages. The peak frequency of accidents occurs in the mid-to-late 20s (around 25-30 years old). The box plot confirms this, with the median (the line inside the box) and the highest bars clustering in this younger adult range. This highlights younger adults as the highest-risk age group for motorbike accidents"
 st.info(summary_text)
 
 # --- CHART 3: Biker Age Distribution (Plotly Histogram) ---
