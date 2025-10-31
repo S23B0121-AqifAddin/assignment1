@@ -32,7 +32,7 @@ except FileNotFoundError:
     df = pd.DataFrame(data)
 
 st.header('1) Biker Occupation Distribution')
-summary_text = "The highest frequency of bikers in the accident dataset are Students, followed by "Others," "Business," and "Service" occupations, which have similar frequencies. This suggests that the student demographic may be disproportionately involved in motorbike accidents compared to other occupational groups"
+summary_text = "The highest frequency of bikers in the accident dataset are Students, followed by "Others, Business, and Service occupations, which have similar frequencies. This suggests that the student demographic may be disproportionately involved in motorbike accidents compared to other occupational groups"
 st.info(summary_text)
 
 # --- CHART 1: Biker Occupation Distribution (Plotly Bar) ---
@@ -66,7 +66,7 @@ else:
 
 
 st.header('2) Biker Education Level Distribution')
-summary_text = "The clear majority of bikers involved in the accidents have an "Above high school" education level. The count for "High school" is significantly lower, and "Less than high school" is the lowest. This could indicate a higher propensity for accidents among the more educated group, or simply that the biking population is predominantly educated above the high school level."
+summary_text = "The clear majority of bikers involved in the accidents have an Above high school education level. The count for High school is significantly lower, and Less than high school is the lowest. This could indicate a higher propensity for accidents among the more educated group, or simply that the biking population is predominantly educated above the high school level."
 st.info(summary_text)
 
 # --- CHART 2: Biker Education Level Distribution (Plotly Bar) ---
