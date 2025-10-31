@@ -21,11 +21,9 @@ st.title("🏍️ Motorbike Accident Distribution Analysis")
 
 # --- 1. Road Type Analysis ---
 st.header("1. Road Type Analysis")
-st.subheader("Accidents are fairly evenly distributed across the three road types: City Road, Highway, and Village Road. City Road has the highest count, but the differences between the three categories are not extreme. This suggests that accident risk is significant regardless of the type of road, necessitating safety measures across all environments.")
-
-# Summary Box
-summary_text_type = "This chart shows the distribution of accidents across different road types. This analysis helps determine where resources (like widening or speed limit enforcement) should be concentrated."
+summary_text_type ="Accidents are fairly evenly distributed across the three road types: City Road, Highway, and Village Road. City Road has the highest count, but the differences between the three categories are not extreme. This suggests that accident risk is significant regardless of the type of road, necessitating safety measures across all environments.")
 st.info(summary_text_type)
+
 
 if 'Road_Type' in df.columns:
     # 1. Prepare data for Plotly (get counts and ensure order)
@@ -60,10 +58,7 @@ st.markdown("---") # Separator for clarity
 
 # --- 2. Road Condition Analysis ---
 st.header("2. Road Condition Analysis")
-st.subheader("There are significantly more accidents on Dry road conditions than on Wet conditions. This suggests that while wet roads are inherently dangerous, the sheer volume of traffic and riding time on dry roads leads to a greater total number of accidents. Interventions should focus on safety during dry conditions, which account for the majority of incidents.")
-
-# Summary Box
-summary_text_condition = "This chart illustrates the frequency of accidents by the condition of the road surface at the time of the crash. This analysis helps identify road surface hazards (like ice or wet surfaces) that contribute most to accidents."
+summary_text_type ="There are significantly more accidents on Dry road conditions than on Wet conditions. This suggests that while wet roads are inherently dangerous, the sheer volume of traffic and riding time on dry roads leads to a greater total number of accidents. Interventions should focus on safety during dry conditions, which account for the majority of incidents.")
 st.info(summary_text_condition)
 
 if 'Road_condition' in df.columns:
@@ -95,10 +90,9 @@ else:
     st.error("The DataFrame does not contain a 'Road_condition' column. Please check your data file.")
 
 st.header("3. Relationship between Road Condition and Accident Severity")
-st.subheader("Accidents on Dry roads are much more frequent than on Wet roads.The proportion of Severe Accidents (pink/red color) is visually higher for Wet conditions compared to Dry conditions. This suggests that while more total accidents happen on dry roads, accidents on wet roads are more likely to result in a Severe outcome.")
-
-summary_text_road = "This stacked chart visualizes how accident severity levels change based on the road surface condition (Dry, Wet, Icy, etc.). This is crucial for identifying risks associated with poor road traction."
+summary_text_type ="Accidents on Dry roads are much more frequent than on Wet roads.The proportion of Severe Accidents (pink/red color) is visually higher for Wet conditions compared to Dry conditions. This suggests that while more total accidents happen on dry roads, accidents on wet roads are more likely to result in a Severe outcome.")
 st.info(summary_text_road)
+
 
 if 'Road_condition' in df.columns and 'Accident_Severity' in df.columns:
     
