@@ -9,9 +9,11 @@ try:
     df = pd.read_csv("motorbike_accident_severity.csv") 
 except FileNotFoundError:
     st.warning("Data file not found. Using dummy data for demonstration.")
+    # Added dummy 'Accident_Severity' to allow the third chart to run with dummy data
     data = {
         'Road_Type': np.random.choice(['Single Carriageway', 'Dual Carriageway', 'Roundabout', 'Motorway', 'Slip Road'], size=500),
         'Road_condition': np.random.choice(['Dry', 'Wet / Damp', 'Snow', 'Frost / Ice', 'Flood'], size=500),
+        'Accident_Severity': np.random.choice(['Slight', 'Serious', 'Fatal'], size=500)
     }
     df = pd.DataFrame(data)
 
@@ -21,7 +23,8 @@ st.title("🏍️ Motorbike Accident Distribution Analysis")
 
 # --- 1. Road Type Analysis ---
 st.header("1. Road Type Analysis")
-summary_text = "Accidents are fairly evenly distributed across the three road types: City Road, Highway, and Village Road. City Road has the highest count, but the differences between the three categories are not extreme. This suggests that accident risk is significant regardless of the type of road, necessitating safety measures across all environments.")
+# FIX APPLIED: Removed extra closing parenthesis
+summary_text = "Accidents are fairly evenly distributed across the three road types: City Road, Highway, and Village Road. City Road has the highest count, but the differences between the three categories are not extreme. This suggests that accident risk is significant regardless of the type of road, necessitating safety measures across all environments."
 st.info(summary_text)
 
 
@@ -58,7 +61,8 @@ st.markdown("---") # Separator for clarity
 
 # --- 2. Road Condition Analysis ---
 st.header("2. Road Condition Analysis")
-summary_text = "There are significantly more accidents on Dry road conditions than on Wet conditions. This suggests that while wet roads are inherently dangerous, the sheer volume of traffic and riding time on dry roads leads to a greater total number of accidents. Interventions should focus on safety during dry conditions, which account for the majority of incidents.")
+# FIX APPLIED: Removed extra closing parenthesis
+summary_text = "There are significantly more accidents on Dry road conditions than on Wet conditions. This suggests that while wet roads are inherently dangerous, the sheer volume of traffic and riding time on dry roads leads to a greater total number of accidents. Interventions should focus on safety during dry conditions, which account for the majority of incidents."
 st.info(summary_text)
 
 if 'Road_condition' in df.columns:
@@ -90,7 +94,8 @@ else:
     st.error("The DataFrame does not contain a 'Road_condition' column. Please check your data file.")
 
 st.header("3. Relationship between Road Condition and Accident Severity")
-summary_text = "Accidents on Dry roads are much more frequent than on Wet roads.The proportion of Severe Accidents (pink/red color) is visually higher for Wet conditions compared to Dry conditions. This suggests that while more total accidents happen on dry roads, accidents on wet roads are more likely to result in a Severe outcome.")
+# FIX APPLIED: Removed extra closing parenthesis
+summary_text = "Accidents on Dry roads are much more frequent than on Wet roads.The proportion of Severe Accidents (pink/red color) is visually higher for Wet conditions compared to Dry conditions. This suggests that while more total accidents happen on dry roads, accidents on wet roads are more likely to result in a Severe outcome."
 st.info(summary_text)
 
 
