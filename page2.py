@@ -27,9 +27,9 @@ df = load_data()
 
 # --- Streamlit Application ---
 
-st.title("Accident Analysis Dashboard: Motorbike Safety")
-st.subheader("To determine if accident frequency remains high during 'Clear' weather relative to adverse conditions (Rainy, Foggy), suggesting that factors beyond weather, such as speed or complacency, are primary contributors to the majority of crashes.")
-
+st.subheader("Objective : To quantify the influence of road conditions and road type on both accident frequency and the resulting severity, identifying key road-related hazards.")
+summary_text = "These charts analyze how road characteristics influence accident frequency and severity. The Distribution of Accidents by Road Type shows a relatively even spread across City Roads, Highways, and Village Roads, suggesting accident risk is pervasive regardless of the road environment. However, the Road Condition Analysis reveals that Dry conditions account for the largest total number of accidents, a finding that suggests high traffic volume and driver behavior are major contributors. Crucially, the Relationship between Road Condition and Accident Severity demonstrates that although dry roads have more total incidents, accidents occurring on Wet road surfaces are significantly more likely to be classified as Severe. This indicates that reduced traction on wet roads elevates the danger level of any incident."
+st.info(summary_text)
 # --- 1. Weather of Day Analysis (Plotly) ---
 st.header("1. Weather of Day Analysis")
 summary_text = "Accidents peak significantly during the Afternoon time segment. Night has the second-highest count, while Morning, Noon, and Evening have lower, but roughly equal, frequencies. This clearly identifies the Afternoon as the most dangerous period for bikers, likely correlating with high traffic volume (e.g., afternoon commute)"
