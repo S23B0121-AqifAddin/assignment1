@@ -10,7 +10,7 @@ page_3 = st.Page("page3.py", title="Page 3", icon=":material/settings:")
 # Create navigation menu
 pg = st.navigation(
     {
-        "Menu": [home, page_1, page_2, page_3]
+        "Menu": [page_1, page_2, page_3]
     }
 )
 
