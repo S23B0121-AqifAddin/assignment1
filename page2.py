@@ -32,7 +32,7 @@ st.subheader("To determine if accident frequency remains high during 'Clear' wea
 
 # --- 1. Weather of Day Analysis (Plotly) ---
 st.header("1. Weather of Day Analysis")
-summary_text = "This chart illustrates the frequency of different weather conditions at the time of the reported motorbike accidents. 'Clear' weather conditions appear to be the most common during accidents, followed by 'Rainy' and 'Foggy' conditions. 'Windy' conditions are the least frequent."
+summary_text = "Accidents peak significantly during the Afternoon time segment. Night has the second-highest count, while Morning, Noon, and Evening have lower, but roughly equal, frequencies. This clearly identifies the Afternoon as the most dangerous period for bikers, likely correlating with high traffic volume (e.g., afternoon commute)"
 st.info(summary_text)
 
 if 'Weather' in df.columns:
