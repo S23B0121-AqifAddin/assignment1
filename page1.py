@@ -10,8 +10,8 @@ st.set_page_config(
     layout="wide" # Use wide layout for better visualization
 )
 
-st.title("Motorbike Accident Analysis")
-st.subheader("Visualizing key demographics of the biker population involved in accidents.")
+st.title("Bangladesh Motorbike Accident")
+st.subheader("To profile the highest-risk rider population by age, education, and occupation to inform targeted safety campaigns and interventions.")
 
 summary_text = "This group of visualizations focuses on the demographic profile of the bikers involved in the accident dataset. The analysis highlights that students are the most frequently represented occupation, followed by those with an Above high school education, indicating a strong skew towards a highly-educated demographic in the biking population or accident victims. The Distribution of Biker Age reveals a critical risk factor, with the majority of accidents occurring in the mid-to-late 20s, suggesting that younger, less-experienced adults are disproportionately at risk. This is confirmed by the histogram and box plot, which show a peak frequency in this age range and a right-skewed distribution. The key finding is that safety interventions should specifically target this younger, educated, and student population."
 st.info(summary_text)
