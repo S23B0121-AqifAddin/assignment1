@@ -18,8 +18,9 @@ except FileNotFoundError:
     df = pd.DataFrame(data)
 
 # --- Streamlit Application ---
-
-st.title("🏍️ Motorbike Accident Distribution Analysis")
+st.subheader("Objective : To show the count of accidents segmented by severity level for each weather condition. This is a key metric to identify disproportionately dangerous conditions (i.e., which weather conditions lead to the most severe outcomes).")
+summary_text = "This section examines the influence of time and weather on accident occurrences. The Time of Day Analysis pinpoints the Afternoon as the peak period for accidents, which strongly suggests a correlation with high-volume traffic times, such as the daily commute. In contrast, the Weather of Day Analysis shows that the highest count of accidents happens during Clear weather—conditions seemingly ideal for riding. This implies that overconfidence or speed in good weather may be a primary cause of incidents. Furthermore, the stacked chart on the Relationship between Weather and Accident Severity indicates that the proportion of severe accidents is relatively stable across Clear, Rainy, and Foggy conditions, reinforcing the idea that rider behavior, rather than solely environmental impairment, drives the overall accident severity rate."
+st.info(summary_text)
 
 # --- 1. Road Type Analysis ---
 st.header("1. Road Type Analysis")
