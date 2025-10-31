@@ -4,8 +4,6 @@ import numpy as np
 import plotly.express as px # Import Plotly Express
 
 # --- Streamlit Application ---
-summary_text = "This group of visualizations focuses on the demographic profile of the bikers involved in the accident dataset. The analysis highlights that students are the most frequently represented occupation, followed by those with an Above high school education, indicating a strong skew towards a highly-educated demographic in the biking population or accident victims. The Distribution of Biker Age reveals a critical risk factor, with the majority of accidents occurring in the mid-to-late 20s, suggesting that younger, less-experienced adults are disproportionately at risk. This is confirmed by the histogram and box plot, which show a peak frequency in this age range and a right-skewed distribution. The key finding is that safety interventions should specifically target this younger, educated, and student population."
-st.info(summary_text)
 
 st.set_page_config(
     page_title="Motorbike Accident Analysis",
@@ -14,6 +12,9 @@ st.set_page_config(
 
 st.title("Motorbike Accident Analysis")
 st.subheader("Visualizing key demographics of the biker population involved in accidents.")
+
+summary_text = "This group of visualizations focuses on the demographic profile of the bikers involved in the accident dataset. The analysis highlights that students are the most frequently represented occupation, followed by those with an Above high school education, indicating a strong skew towards a highly-educated demographic in the biking population or accident victims. The Distribution of Biker Age reveals a critical risk factor, with the majority of accidents occurring in the mid-to-late 20s, suggesting that younger, less-experienced adults are disproportionately at risk. This is confirmed by the histogram and box plot, which show a peak frequency in this age range and a right-skewed distribution. The key finding is that safety interventions should specifically target this younger, educated, and student population."
+st.info(summary_text)
 # 1. Load the dataset
 try:
     # Attempt to load the real data
