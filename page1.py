@@ -34,7 +34,7 @@ except FileNotFoundError:
     }
     df = pd.DataFrame(data)
 
-st.header('1) Biker Occupation Distribution')
+st.header('1. Biker Occupation Distribution')
 summary_text = "The highest frequency of bikers in the accident dataset are Students, followed by Others, Business, and Service occupations, which have similar frequencies. This suggests that the student demographic may be disproportionately involved in motorbike accidents compared to other occupational groups"
 st.info(summary_text)
 
@@ -68,7 +68,7 @@ else:
     st.error("The DataFrame does not contain a 'Biker_Occupation' column for analysis.")
 
 
-st.header('2) Biker Education Level Distribution')
+st.header('2. Biker Education Level Distribution')
 summary_text = "The clear majority of bikers involved in the accidents have an Above high school education level. The count for High school is significantly lower, and Less than high school is the lowest. This could indicate a higher propensity for accidents among the more educated group, or simply that the biking population is predominantly educated above the high school level."
 st.info(summary_text)
 
@@ -103,7 +103,7 @@ if 'Biker_Education_Level' in df.columns:
 else:
     st.error("The DataFrame does not contain a 'Biker_Education_Level' column for analysis.")
     
-st.header('3) Distribution of Biker Age')
+st.header('3. Distribution of Biker Age')
 summary_text = "The age distribution is right-skewed, meaning there is a tail extending towards older ages. The peak frequency of accidents occurs in the mid-to-late 20s (around 25-30 years old). The box plot confirms this, with the median (the line inside the box) and the highest bars clustering in this younger adult range. This highlights younger adults as the highest-risk age group for motorbike accidents"
 st.info(summary_text)
 
