@@ -61,9 +61,9 @@ else:
 
 # --- 2. Time of Day Analysis (Plotly) ---
 st.header("2. Time of Day Analysis")
-st.subheader("The highest total number of accidents occur during Clear weather, with Rainy and Foggy conditions having a slightly lower but comparable count. Similar to the road condition analysis, this indicates that the majority of accidents happen under seemingly ideal (clear) conditions, which may be due to higher traffic, speeding, or overconfidence, rather than weather-related impairment.")
+st.subheader("")
 
-summary_text_time = "This chart illustrates the frequency of accidents categorized by the time of day. This is crucial for optimizing police patrols and enforcement efforts to target the most dangerous periods for bikers."
+summary_text_time = "The highest total number of accidents occur during Clear weather, with Rainy and Foggy conditions having a slightly lower but comparable count. Similar to the road condition analysis, this indicates that the majority of accidents happen under seemingly ideal (clear) conditions, which may be due to higher traffic, speeding, or overconfidence, rather than weather-related impairment."
 st.info(summary_text_time)
 
 if 'Time_of_Day' in df.columns:
