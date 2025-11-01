@@ -61,7 +61,7 @@ else:
 
 # --- 2. Time of Day Analysis (Plotly) ---
 st.header("2. Time of Day Analysis")
-st.subheader("To pinpoint peak accident times to optimize enforcement schedules and issue time-specific safety alerts.")
+st.subheader("The highest total number of accidents occur during Clear weather, with Rainy and Foggy conditions having a slightly lower but comparable count. Similar to the road condition analysis, this indicates that the majority of accidents happen under seemingly ideal (clear) conditions, which may be due to higher traffic, speeding, or overconfidence, rather than weather-related impairment.")
 
 summary_text_time = "This chart illustrates the frequency of accidents categorized by the time of day. This is crucial for optimizing police patrols and enforcement efforts to target the most dangerous periods for bikers."
 st.info(summary_text_time)
@@ -93,7 +93,7 @@ else:
 # --- 3. Relationship between Weather and Accident Severity (Plotly Stacked Bar) ---
 st.header("3. Relationship between Weather and Accident Severity")
 st.subheader("Severity of Accidents by Weather Condition")
-summary_text_severity = "This stacked bar chart shows the count of accidents segmented by severity level (Slight, Serious, Fatal) for each weather condition. It is a key metric to identify disproportionately dangerous conditions."
+summary_text_severity = "The proportion of the most severe accidents ('No Accident' and 'Severe Accident' seem to be the severe categories based on the legend colors: Yellow and Green, or perhaps Severe Accident and Moderate Accident are the non-minor categories). Assuming the top two colors are the most severe: The proportions of severe accidents appear relatively consistent across Clear, Rainy, and Foggy weather. This suggests that while Rainy and Foggy weather are hazardous, the severity of an accident, once it occurs, is not drastically different compared to Clear conditions."
 st.info(summary_text_severity)
 
 if 'Weather' in df.columns and 'Accident_Severity' in df.columns:
