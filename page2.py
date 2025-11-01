@@ -61,7 +61,6 @@ else:
 
 # --- 2. Time of Day Analysis (Plotly) ---
 st.header("2. Time of Day Analysis")
-st.subheader("")
 
 summary_text_time = "The highest total number of accidents occur during Clear weather, with Rainy and Foggy conditions having a slightly lower but comparable count. Similar to the road condition analysis, this indicates that the majority of accidents happen under seemingly ideal (clear) conditions, which may be due to higher traffic, speeding, or overconfidence, rather than weather-related impairment."
 st.info(summary_text_time)
