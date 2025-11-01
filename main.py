@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.set_page_config(page_title="Bangladesh Motorbike Accident", page_icon=":motorbike:")
+st.set_page_config(page_title="Bangladesh Motorbike Accident")
 
 # Define each page
 page_1 = st.Page("page1.py", title="Page 1")
